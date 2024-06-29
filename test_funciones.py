@@ -11,11 +11,12 @@ def test_cesar():
     assert cesar("ZIGZAG", 1) == " JH BH"
     assert cesar(" JH BH", -1) == "ZIGZAG"
 
+
 def test_crea_cifrador():
     
     cesar3 = crea_cifrador(3)
-
     assert cesar3("ZIGZAG") == "BLJBDJ"
+
 
 def test_crea_par_cesar():
 

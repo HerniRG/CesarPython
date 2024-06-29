@@ -12,10 +12,12 @@ def cesar(cadena, codificacion):
             cifrado_realizado += caracter
     return cifrado_realizado
 
+
 def crea_cifrador(d: int) -> callable:
     def cifrador_interno(cadena):
         return cesar(cadena, d)
     return cifrador_interno
+
 
 def crea_par_cesar(d: int) -> tuple:
     def cifrador_interno(cadena):
