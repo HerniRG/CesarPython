@@ -23,5 +23,3 @@ def crea_par_cesar(d: int) -> tuple:
     def descifrador_interno(cadena):
         return cesar(cadena, d * -1)
     return cifrador_interno, descifrador_interno
-
-
