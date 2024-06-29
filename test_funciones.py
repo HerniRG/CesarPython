@@ -1,4 +1,4 @@
-from funciones import crea_cifrador, cesar
+from funciones import crea_cifrador, cesar, crea_par_cesar
 
 def test_cesar():
 
@@ -17,3 +17,11 @@ def test_crea_cifrador():
     cesar3 = crea_cifrador(3)
 
     assert cesar3("ZIGZAG") == "BLJBDJ"
+
+
+def test_crea_par_cesar():
+
+    cifrador_cesar_3, descifrador_cesar_3 = crea_par_cesar(3)
+
+    assert cifrador_cesar_3("ZIGZAG") == "BLJBDJ"
+    assert descifrador_cesar_3("BLJBDJ") == "ZIGZAG"

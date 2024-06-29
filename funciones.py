@@ -18,9 +18,12 @@ def crea_cifrador(d: int) -> callable:
         return cesar(cadena, d)
     return cifrador_interno
 
-cesar_10 = crea_cifrador(10)
 
-
-print(cesar_10("ZIGZAG"))
+def crea_par_cesar(d: int) -> tuple:
+    def cifrador_interno(cadena):
+        return cesar(cadena, d)
+    def descifrador_interno(cadena):
+        return cesar(cadena, d * -1)
+    return cifrador_interno, descifrador_interno
 
 
