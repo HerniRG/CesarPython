@@ -31,28 +31,18 @@ def crea_par_cesar(d: int) -> tuple:
 class Cifrador:
     def __init__(self, d) -> None:
         self.d = d
+        self.cifrados_pendientes = 5
     
-    def cesar(self, cadena: str) -> str:
-        alfabeto = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ "
-        cifrado_realizado = ""
-        long_alfabeto = len(alfabeto)
+    def cifrar(self, mensaje) -> str:
 
-        for caracter in cadena.upper():
-            if caracter in alfabeto:
-                indice = alfabeto.index(caracter)
-                indice_cifrado = (indice + self.d) % long_alfabeto # si es mayor de long alfabeto se hace modulo para saber el sobrante y empezar de nuevo 
-                cifrado_realizado += alfabeto[indice_cifrado]
-            else:
-                cifrado_realizado += caracter
-        return cifrado_realizado
+        if self.cifrados_pendientes == 0:
+            return "Compre en cifrados Pepe!"
 
+        self.cifrados_pendientes -= 1
 
-print(cesar("HOLA", -5))
-print(cesar("MUNDO", 10))
+        return cesar(mensaje, self.d)
 
-cifrador1, descifrador1 = crea_par_cesar(-5)
-
-print(cifrador1("Hola"))
-
-c1 = Cifrador(10)
-print(c1.cesar("Mundo"))
+   
+ana = Cifrador(4)
+print(ana.cifrados_pendientes)
+print(ana.cifrar("Hola"))
