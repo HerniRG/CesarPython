@@ -3,8 +3,7 @@ def cesar(cadena: str, codificacion: int) -> str:
     cifrado_realizado = ""
     long_alfabeto = len(alfabeto)
 
-    for caracter in cadena:
-        caracter = caracter.upper()
+    for caracter in cadena.upper():
         if caracter in alfabeto:
             indice = alfabeto.index(caracter)
             indice_cifrado = (indice + codificacion) % long_alfabeto # si es mayor de long alfabeto se hace modulo para saber el sobrante y empezar de nuevo 
